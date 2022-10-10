@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>HW-Shop</title>
+  </head>
+  <body>
+    <h1>HIGH-Phones</h1>
+    <button onclick="h1()">change header</button>
+    <button onclick="bodycolor()">change color</button>
+    <button onclick="footer()">change address</button>
+    <button onclick="amazon()">Add_class</button>
+    <button onclick="pictures()">Images</button>
+    <button onclick="amazon_colors()">Link-color</button>
+    <button onclick="prices()">Prices</button>
+    <table>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Buy</th>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="./images/phone1.jpeg"
+            alt=""
+            style="width: 90px"
+            class="images"
+          />
+        </td>
+        <td>SomSing</td>
+        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
+        <td>500€</td>
+        <td>
+          <a href="https://www.amazon.com/iphone/s?k=iphone" class="link"
+            >Buy Here!</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="./images/phone2.jpeg"
+            alt=""
+            style="width: 90px"
+            class="images"
+          />
+        </td>
+        <td>HeyPhone</td>
+        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
+        <td>500€</td>
+        <td>
+          <a href="https://www.amazon.com/iphone/s?k=iphone" class="link"
+            >Buy Here!</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="./images/phone3.jpeg"
+            alt=""
+            style="width: 90px"
+            class="images"
+          />
+        </td>
+        <td>BleuBerry</td>
+        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
+        <td>500€</td>
+        <td>
+          <a href="https://www.amazon.com/iphone/s?k=iphone" class="link"
+            >Buy Here!</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="./images/phone40.jpeg"
+            alt=""
+            style="width: 90px"
+            class="images"
+          />
+        </td>
+        <td>Tonodo</td>
+        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
+        <td>500€</td>
+        <td>
+          <a href="https://www.amazon.com/iphone/s?k=iphone" class="link"
+            >Buy Here!</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="./images/phone5.jpeg"
+            alt=""
+            style="width: 90px"
+            class="images"
+          />
+        </td>
+        <td>Sonitec</td>
+        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
+        <td>500€</td>
+        <td>
+          <a href="https://www.amazon.com/iphone/s?k=iphone" class="link"
+            >Buy Here!</a
+          >
+        </td>
+      </tr>
+    </table>
+
+    <div>
+      <form action="">
+        <input type="text" name="message" />
+        <input type="submit" />
+      </form>
+      <footer>
+        <p id="footer">North Avenue Street, City Center</p>
+      </footer>
+    </div>
+
+    <script>
+      const h1 = function () {
+        const title = document.querySelector("h1");
+        title.innerText = "Hi";
+      };
+
+      const bodycolor = function () {
+        const color = document.querySelector("body");
+        color.classList.toggle("blue");
+      };
+
+      const footer = function () {
+        const address = document.querySelector("#footer");
+        address.innerHTML = "Fake address";
+      };
+
+      const amazon = function () {
+        for (let i of document.querySelectorAll("a")) {
+          i.classList.add("link_Amazon");
+        }
+      };
+
+      const pictures = function () {
+        for (let i of document.querySelectorAll("img")) {
+          i.classList.toggle("hidden");
+        }
+      };
+
+      const random_colors = function () {
+        let letters = "0123456789ABCDEF";
+        let the_color = "#";
+        for (let z = 0; z < 6; z++) {
+          the_color = the_color + letters[Math.floor(Math.random() * 16)];
+        }
+        return the_color;
+      };
+
+      const amazon_colors = function () {
+        let sele = document.querySelectorAll("a");
+        for (let z of sele) {
+          z.style.color = random_colors();
+        }
+      };
+      const prices = function () {
+        let price_names = document.querySelectorAll("tr > td:nth-child(4)");
+        for (let price of price_names) {
+          price.style.color = random_colors();
+        }
+      };
+    </script>
+
+    <!-- <script src="./index.js"></script> -->
+  </body>
+</html>
